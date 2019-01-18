@@ -1,6 +1,6 @@
 //Rectangles going from left to right at different speeds
 var count = 0;
-;// initialize a counter variable
+// initialize a counter variable
 function setup() {
 createCanvas(800, 300);
 }
@@ -17,7 +17,7 @@ var y= height/5 ;
 // rectangle 2
   fill(161,57,173);
 rect(x+ count ,y+50,100, 30);
-count=count +1;
+
   //rectangle 3
   fill(193,27,63);
 rect(x+ count*2  ,y+100,100,30)
@@ -30,10 +30,4 @@ rect(x+count*3 ,y+150,100,30);
     fill(4,232,4173);
 rect(x+count*4 ,y+200,100,30);
   ;
-
 }
-
-
-
-
-

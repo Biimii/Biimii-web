@@ -1,0 +1,29 @@
+{
+"type": "FeatureCollection",
+"name": "van_transit_stations",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "STATION": "WATERFRONT" }, "geometry": { "type": "Point", "coordinates": [ -123.11174, 49.28608 ] } },
+{ "type": "Feature", "properties": { "STATION": "BURRARD" }, "geometry": { "type": "Point", "coordinates": [ -123.11997, 49.28586 ] } },
+{ "type": "Feature", "properties": { "STATION": "GRANVILLE" }, "geometry": { "type": "Point", "coordinates": [ -123.1164, 49.28364 ] } },
+{ "type": "Feature", "properties": { "STATION": "STADIUM - CHINATOWN" }, "geometry": { "type": "Point", "coordinates": [ -123.10956, 49.27944 ] } },
+{ "type": "Feature", "properties": { "STATION": "MAIN ST. - SCIENCE WORLD" }, "geometry": { "type": "Point", "coordinates": [ -123.10061, 49.27318 ] } },
+{ "type": "Feature", "properties": { "STATION": "BROADWAY" }, "geometry": { "type": "Point", "coordinates": [ -123.0691, 49.26182 ] } },
+{ "type": "Feature", "properties": { "STATION": "NANAIMO" }, "geometry": { "type": "Point", "coordinates": [ -123.05587, 49.24827 ] } },
+{ "type": "Feature", "properties": { "STATION": "29TH AVENUE" }, "geometry": { "type": "Point", "coordinates": [ -123.04594, 49.24424 ] } },
+{ "type": "Feature", "properties": { "STATION": "JOYCE - COLLINGWOOD" }, "geometry": { "type": "Point", "coordinates": [ -123.03181, 49.23839 ] } },
+{ "type": "Feature", "properties": { "STATION": "RUPERT" }, "geometry": { "type": "Point", "coordinates": [ -123.03282, 49.26076 ] } },
+{ "type": "Feature", "properties": { "STATION": "RENFREW" }, "geometry": { "type": "Point", "coordinates": [ -123.04531, 49.25889 ] } },
+{ "type": "Feature", "properties": { "STATION": "COMMERCIAL DRIVE" }, "geometry": { "type": "Point", "coordinates": [ -123.06845, 49.26294 ] } },
+{ "type": "Feature", "properties": { "STATION": "VCC - CLARK" }, "geometry": { "type": "Point", "coordinates": [ -123.07896, 49.26578 ] } },
+{ "type": "Feature", "properties": { "STATION": "WATERFRONT" }, "geometry": { "type": "Point", "coordinates": [ -123.11334, 49.28567 ] } },
+{ "type": "Feature", "properties": { "STATION": "VANCOUVER\\nCITY\\nCENTRE" }, "geometry": { "type": "Point", "coordinates": [ -123.11928, 49.28173 ] } },
+{ "type": "Feature", "properties": { "STATION": "YALETOWN-\/nROUNDHOUSE" }, "geometry": { "type": "Point", "coordinates": [ -123.12189, 49.27436 ] } },
+{ "type": "Feature", "properties": { "STATION": "OLYMPIC\\nVILLAGE" }, "geometry": { "type": "Point", "coordinates": [ -123.1152, 49.26634 ] } },
+{ "type": "Feature", "properties": { "STATION": "BROADWAY-\\nCITY HALL" }, "geometry": { "type": "Point", "coordinates": [ -123.11478, 49.26277 ] } },
+{ "type": "Feature", "properties": { "STATION": "KING EDWARD" }, "geometry": { "type": "Point", "coordinates": [ -123.11534, 49.24912 ] } },
+{ "type": "Feature", "properties": { "STATION": "OAKRIDGE-\\n41st. AVE." }, "geometry": { "type": "Point", "coordinates": [ -123.11604, 49.23347 ] } },
+{ "type": "Feature", "properties": { "STATION": "LANGARA-\\n49th AVE." }, "geometry": { "type": "Point", "coordinates": [ -123.11632, 49.22639 ] } },
+{ "type": "Feature", "properties": { "STATION": "MARINE DRIVE" }, "geometry": { "type": "Point", "coordinates": [ -123.11707, 49.20955 ] } }
+]
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Vancouver Transportation of Crip Mobility</title>
+
+<link href='https://www.mapbox.com/base/latest/base.css' rel='stylesheet' />
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.6/mapbox.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.6/mapbox.css' rel='stylesheet' />
+<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-label/v0.2.1/leaflet.label.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-label/v0.2.1/leaflet.label.css' rel='stylesheet' />
+
+<style>
+  body { margin:0; padding:0; }
+  #map { position:absolute; top:0; bottom:0; width:100%; }
+  .small-input { width: 80px; vertical-align:middle; }
+</style>
+</head>
+<body>
+<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/turf/v1.3.0/turf.min.js'></script>
+<div id='map'></div>
+<div class='pin-top fill-gray pad1'>
+    Disabled parking within
+    <input type='number' id='radius' max='4000' min='0' class='clean short small-input' value='500' step='50' /> feet
+    of a transit station.
+    <p class='small'>A GeoJSON route is buffered with <a target='_blank' href='https://github.com/Turfjs/turf-buffer'>turf-buffer</a>
+    and points are found with <a href='https://github.com/Turfjs/turf-within'>turf-within</a>.</p>
+</div>
+<script>
+L.mapbox.accessToken = 'pk.eyJ1IjoiYmlpbWlpIiwiYSI6ImNqcm1lbjhjdDAxemM0M3BjYnNsZ3FoMmcifQ.HMNhuxwAn9-LXHkLsJHrNA';
+
+var map = L.mapbox.map('map', 'mapbox.dark',{center: [-123.122828,49.258135]}, { zoomControl: false });
+var bufferLayer = L.mapbox.featureLayer().addTo(map);
+
+var transitStations = L.mapbox.featureLayer().addTo(map);
+var transitLine = L.mapbox.featureLayer().addTo(map);
+var disabledParkings = L.mapbox.featureLayer().addTo(map);
+var disabledParkingsInside = L.mapbox.featureLayer().addTo(map);
+
+disabledParkings.loadURL('https://raw.githubusercontent.com/Biimii/Biimii-web/master/van%20parking%20disability.geojson')
+    .on('ready', done);
+
+transitLine.loadURL('https://raw.githubusercontent.com/Biimii/Biimii-web/master/rapid%20transit%20line.geojson')
+    .on('ready',done);
+
+transitStations.loadURL('https://raw.githubusercontent.com/Biimii/Biimii-web/master/van_transit_stations.geojson')
+    .on('ready', done);
+
+var loaded = 0;
+function done() {
+    if (++loaded !== 2) return;
+    transitLine.setStyle({ color: 'hotpink', weight: 3 });
+    map.fitBounds(disabledParkings.getBounds());
+
+    function run() {
+        var radius = parseInt(document.getElementById('radius').value);
+        if (isNaN(radius)) radius = 500;
+        var buffer = turf.buffer(transitStations.getGeoJSON(), radius/5280, 'miles');
+
+        var stations= transitStations.getGeoJSON();
+        stations.features.forEach(function(feature) {
+            feature.properties['marker-color'] = '#f49b42';
+            feature.properties['marker-symbol'] = 'rail-metro';
+            feature.properties['marker-size'] = 'large';
+          });
+
+
+        var parkings =disabledParkings.getGeoJSON();
+        parkings.features.forEach(function(feature) {
+            feature.properties['marker-color'] = '#111';
+            feature.properties['marker-symbol'] = 'parking';
+            feature.properties['marker-size'] = 'small';
+        });
+        disabledParkings.setGeoJSON(parkings);
+        bufferLayer
+            .setGeoJSON(buffer)
+            .setStyle({
+                stroke: false,
+                fillColor: 'hotpink',
+                fillOpacity: 0.2
+            })
+            .eachLayer(function(layer) {
+                layer.bindLabel('Transit station', { noHide: true });
+            });
+        var parkingsInside = turf.within(disabledParkings.getGeoJSON(), buffer);
+        parkingsInside.features.forEach(function(feature) {
+            feature.properties['marker-color'] = '#00f';
+            feature.properties['marker-symbol'] = 'parking';
+            feature.properties['marker-size'] = 'large';
+        });
+        disabledParkingsInside
+            .setGeoJSON(parkingsInside)
+            .eachLayer(function(layer) {
+                layer.bindLabel('Nearest Disabled Parking');
+            });
+    }
+
+    run();
+
+    document.getElementById('radius').onchange = run;
+}
+</script>
+</body>
+</html>

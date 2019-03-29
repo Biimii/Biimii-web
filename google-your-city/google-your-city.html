@@ -1,0 +1,179 @@
+<html> 
+  
+  <head>
+    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"> </script>
+    <script src="https://unpkg.com/aframe-animation-component@^5.1.2/dist/aframe-animation-component.min.js"></script>
+    <script src="public/js/sphereexpand.js"></script>
+    <script src="public/js/backhome.js"></script>
+    <script src="public/js/examplefunctions.js"></script>
+    <script src="public/js/disappear.js"></script>
+  </head>
+  
+  <body>
+    
+     <a-scene>
+       
+       <a-assets>
+          <img id="woodfloor" src="https://cdn.glitch.com/f2ee9d74-9726-4bed-9c30-2d49d6391dee%2Fdark%20wood%20texture.jpg?1547152228718">
+         <img id="wall" src="https://cdn.glitch.com/f2ee9d74-9726-4bed-9c30-2d49d6391dee%2F4340689010_68c3b1bbb7_o%20(2).jpg?1547154870021">
+        <img id="starsky" src="https://cdn.glitch.com/f2ee9d74-9726-4bed-9c30-2d49d6391dee%2Fstarry%20night.jpg?1547158907338">
+         <img id="vancouver1" src="https://cdn.glitch.com/25b3131d-e6d0-44c0-bf8b-fa602db74a1b%2Fvancouver-bc.jpg?1553818826168">
+         <img id="vancouver2" src="https://cdn.glitch.com/25b3131d-e6d0-44c0-bf8b-fa602db74a1b%2FAerial_Sunset_Vancouver_d3_copy_1bb86ed0-1edc-4cda-841d-0b033ca0bb72.jpg?1553818826461">
+         <img id="vancouver3" src="https://cdn.glitch.com/25b3131d-e6d0-44c0-bf8b-fa602db74a1b%2FVancouver-03.jpg?1553818826723">
+         <img id="paris1" src="https://cdn.glitch.com/25b3131d-e6d0-44c0-bf8b-fa602db74a1b%2Fdownload.jpg?1553818814347">
+         <img id="paris2" src="https://cdn.glitch.com/25b3131d-e6d0-44c0-bf8b-fa602db74a1b%2Fparis-2017-home.jpg?1553818814738">
+         <img id="paris3" src="https://cdn.glitch.com/25b3131d-e6d0-44c0-bf8b-fa602db74a1b%2Fshutterstockrf_139821658.jpg?1553818815933">
+         <img id="afghanistan1" src="https://cdn.glitch.com/25b3131d-e6d0-44c0-bf8b-fa602db74a1b%2FE4342788-3AE7-49FA-991A-9110925B0C1A_cx0_cy10_cw0_w1023_r1_s.jpg?1553818782447">
+         <img id="afghanistan2" src="https://cdn.glitch.com/25b3131d-e6d0-44c0-bf8b-fa602db74a1b%2Fafghanistan-drugs-burning.jpg?1553818781008">
+         <img id="afghanistan3" src="https://cdn.glitch.com/25b3131d-e6d0-44c0-bf8b-fa602db74a1b%2Fsize0.jpg?1553818784358">
+         <img id="aleppo1" src="https://cdn.glitch.com/25b3131d-e6d0-44c0-bf8b-fa602db74a1b%2Fresize.jpg?1553818802430">
+         <img id="aleppo2" src="https://cdn.glitch.com/25b3131d-e6d0-44c0-bf8b-fa602db74a1b%2FAleppo-in-ruins.jpg?1553818802876">
+         <img id="aleppo3" src="https://cdn.glitch.com/25b3131d-e6d0-44c0-bf8b-fa602db74a1b%2Fmc-aleppo-primer-20161213.jpg?1553818803035">
+         <a-asset-item id="eiffeltower" src="https://cdn.glitch.com/25b3131d-e6d0-44c0-bf8b-fa602db74a1b%2Fparis_eiffel_towel.glb?1553819080155"
+         response-type="arraybuffer"></a-asset-item>
+         <a-asset-item id="totempole" src="https://cdn.glitch.com/25b3131d-e6d0-44c0-bf8b-fa602db74a1b%2Fvancouver_totem_pole.glb?1553819001547"
+         response-type="arraybuffer"></a-asset-item>
+         <a-asset-item id="afghanistan" src="https://cdn.glitch.com/25b3131d-e6d0-44c0-bf8b-fa602db74a1b%2Fafghanistan.glb?1553819119419"
+         response-type="arraybuffer"></a-asset-item>
+         <a-asset-item id="aleppo" src="https://cdn.glitch.com/25b3131d-e6d0-44c0-bf8b-fa602db74a1b%2Faleppo.glb?1553819224645"
+         response-type="arraybuffer"></a-asset-item>
+       </a-assets>
+             
+      <a-entity id="camera" position="0 1.6 0" camera look-controls wasd-controls>
+        <a-entity cursor="rayOrigin: mouse"></a-entity>
+      </a-entity>
+      
+      <a-entity laser-controls="hand:right"></a-entity>
+
+
+      <a-sky id="sky" src="#starsky"></a-sky>
+       
+        <a-entity id="titletext" class="homeworld" position= "0 2 0">
+             <a-plane position="-1 1.69 -2.5" rotation="0 10 0" scale="4 1 1" color="#faaf52" ></a-plane>     
+        <a-text value="What Does Google Think of your City?" position="-2.15 1.69 -2.29" rotation="0 10 0" width="4" color="black" ></a-text>
+       </a-entity>
+       
+      <a-entity id="architecture" class="homeworld">
+         <a-plane id="floor" rotation="-90 90 0" width="30" height="30" src="#woodfloor" repeat="4 4"></a-plane>
+         <a-plane position="0 5 -15" width="30" height="10" src="#wall" repeat="2 1"></a-plane>
+         <a-plane position="-2.5 5 15" rotation="0 180 0" width="40" height="10" src="#wall" repeat="2 1"></a-plane>
+         <a-plane position="-15 5 0" rotation="0 90 0" width="30" height="10" src="#wall" repeat="2 1"></a-plane>
+         <a-plane position="15 5 0" rotation="0 -90 0" width="30" height="10" src="#wall" repeat="2 1"></a-plane>
+         <a-plane id = "ceiling" position="0 10 0" scale="1 1 1" width="30" height="30" rotation="90 0 0"
+           material="metalness:1; roughness:0; transparent: true; opacity: .7; shader: standard; 
+           color: #faaf52; side:double;"   ></a-plane>
+       </a-entity>
+       
+       <a-entity id="vancouverdisplay" class="homeworld" position="0 3 -14.9">
+         <a-plane id="vancouver1frame" color="#191817" width="6" height="5" ></a-plane>
+         <a-plane id="vancouver1picture" src="#vancouver1" position="0 0 .1" width="5.5" height="4.5" 
+                   animation__swoop="property: position; dur: 5000; loop: false; to: 0 1.5 6;"></a-plane>
+         <a-plane id="vancouver2frame" color="#191817" position ="7.951 2.7 0" width="6" height="5"></a-plane>
+         <a-plane id="vancouver2picture" src="#vancouver2" position="7.951 2.7 .1" width="5.5" height="4.5" 
+                  animation__swoop="property: position; dur: 5000; loop: false; to: 6 0 6;"></a-plane>
+         <a-plane id="vancouver3frame" color="#191817" position="-7.951 2.7 0" width="6" height="5"></a-plane>
+         <a-plane id="vancouver3picture" src="#vancouver3" position="-7.951 2.7 .1" width="5.5" height="4.5"
+                  animation__swoop="property: position; dur: 5000; loop: false; to: -6 0 6;"></a-plane>
+         <a-plane id="vancouvercaption" position="0 3 0" rotation="0 0 0" height=".6" width="auto" color="#f4a742"
+          text="value: Vancouver; width: 6; align: center; color: black" 
+                  animation__swoop="property: position; dur: 5000; loop: false; to: 0 -2.6 6;"
+         ></a-plane>
+         
+       </a-entity>
+           
+       <a-entity id="totempoledisplay" class="homeworld" position="5 0.1 -4">
+         <a-box  color="red" width="2" height="2" depth="2"></a-box>
+         <a-gltf-model position="0 1.8 0" rotation="0 0 -10" src="#totempole" scale=".02 .02 .02"
+         animation="property: rotation;  dur: 50000; loop: true; to: 0 1290 0"
+         ></a-gltf-model>
+         <a-plane id="totemcaption" position="-1.93 1 1.44" rotation="0 -45 0" height=".6" width="auto" color="#191817" 
+          text="value: A Totem Pole; align: center; width : 2"
+         ></a-plane>
+       </a-entity>
+       
+       <a-entity id="parisdisplay" class="homeworld" position="-15 3 0" rotation ="0 90 0">
+         <a-plane id="paris1frame" color="#191817" width="6" height="5" position: "0 0 0.3"></a-plane>
+         <a-plane id="paris1picture" src="#paris1" position="0 0 .1" width="5.5" height="4.5" 
+                   animation__swoop="property: position; dur: 5000; loop: false; to: 0 1.5 6;delay: 6000;"></a-plane>
+         <a-plane id="paris2frame" color="#191817" position ="7.951 2.7 0.1" width="6" height="5"></a-plane>
+         <a-plane id="paris2picture" src="#paris2" position="7.951 2.7 .1" width="5.5" height="4.5" 
+                  animation__swoop="property: position; dur: 5000; loop: false; to: 6 0 6;delay: 6000;"></a-plane>
+         <a-plane id="paris3frame" color="#191817" position="-7.951 2.7 0.1" width="6" height="5"></a-plane>
+         <a-plane id="paris3picture" src="#paris3" position="-7.951 2.7 .1" width="5.5" height="4.5"
+                  animation__swoop="property: position; dur: 5000; loop: false; to: -6 0 6;delay: 6000;"></a-plane>
+         <a-plane id="pariscaption" position="0 3 0" rotation="0 0 0" height=".6" width="auto" color="#f4a742"
+          text="value: Paris; width: 6; align: center; color: black" 
+                  animation__swoop="property: position; dur: 5000; loop: false; to: 0 -2.6 6;"
+         ></a-plane>
+         
+       </a-entity>
+       
+        <a-entity id="eiffeltowerdisplay" class="homeworld" position="-6.78 0.047 -5.819">
+         <a-box  color="blue" width="2" height="2" depth="2"></a-box>
+         <a-gltf-model position="0 1.8 0" rotation="0 0 -10" src="#eiffeltower" scale=".4 .4 .4"
+         animation="property: rotation;  dur: 50000; loop: true; to: 0 1290 0"
+         ></a-gltf-model>
+         <a-plane id="eiffeltowercaption" position="2.12 1 2.178" rotation="0 30 0" height=".6" width="2" color="#191817" 
+          text="value: Eiffel Tower; align: center"
+         ></a-plane>
+       </a-entity>
+       
+             <a-entity id="afghanistandisplay" class="homeworld" position="0 3 15" rotation="0 180 0" >
+         <a-plane id="afghanistan1frame" color="#191817" width="6" height="5" position: "0 0 0.3"></a-plane>
+         <a-plane id="afghanistan1picture" src="#afghanistan1" position="0 0 .1" width="5.5" height="4.5" 
+                   animation__swoop="property: position; dur: 5000; loop: false; to: 0 1.5 6;delay: 4000;"></a-plane>
+         <a-plane id="afghanistan2frame" color="#191817" position ="7.951 2.7 0.1" width="6" height="5"></a-plane>
+         <a-plane id="afghanistan2picture" src="#afghanistan2" position="7.951 2.7 .1" width="5.5" height="4.5" 
+                  animation__swoop="property: position; dur: 5000; loop: false; to: 6 0 6;delay: 4000;"></a-plane>
+         <a-plane id="afghanistan3frame" color="#191817" position="-7.951 2.7 0.1" width="6" height="5"></a-plane>
+         <a-plane id="afghanistan3picture" src="#afghanistan3" position="-7.951 2.7 .1" width="5.5" height="4.5"
+                  animation__swoop="property: position; dur: 5000; loop: false; to: -6 0 6;delay: 4000;"></a-plane>
+         <a-plane id="afghanistancaption" position="0 3 0" rotation="0 0 0" height=".6" width="auto" color="#f4a742"
+          text="value: Afghanistan; width: 6; align: center; color: black" 
+                  animation__swoop="property: position; dur: 5000; loop: false; to: 0 -2.6 6;"
+         ></a-plane>
+         
+       </a-entity>
+       
+       <a-entity id="afghanmodeldisplay" class="homeworld" position="-6.78 0.047 6.664">
+         <a-box  color="brown" width="2" height="2" depth="2"></a-box>
+         <a-gltf-model position="0 1.8 0" rotation="0 0 -10" src="#afghanistan" scale="0.7 .7 .7"
+         animation="property: rotation;  dur: 50000; loop: true; to: 0 1290 0"
+         ></a-gltf-model>
+         <a-plane id="afghanmodeltowercaption" position="2.265 1 -2.719" rotation="0 130 0" height=".6" width="2" color="#191817" 
+          text="value: Afghanistan; align: center"
+         ></a-plane>
+       </a-entity>
+       
+             <a-entity id="aleppodisplay" class="homeworld" position="15 3 0" rotation="0 -90 0" >
+         <a-plane id="aleppo1frame" color="#191817" width="6" height="5" position: "0 0 0.3" ></a-plane>
+         <a-plane id="aleppo1picture" src="#aleppo1" position="0 0 .1" width="5.5" height="4.5" 
+                   animation__swoop="property: position; dur: 5000; loop: false; to: 0 1.5 6; delay: 2000;"></a-plane>
+         <a-plane id="aleppo2frame" color="#191817" position ="7.951 2.7 0.1" width="6" height="5"></a-plane>
+         <a-plane id="aleppo2picture" src="#aleppo2" position="7.951 2.7 .1" width="5.5" height="4.5" 
+                  animation__swoop="property: position; dur: 5000; loop: false; to: 6 0 6; delay: 2000;"></a-plane>
+         <a-plane id="aleppo3frame" color="#191817" position="-7.951 2.7 0.1" width="6" height="5"></a-plane>
+         <a-plane id="aleppo3picture" src="#aleppo3" position="-7.951 2.7 .1" width="5.5" height="4.5"
+                  animation__swoop="property: position; dur: 5000; loop: false; to: -6 0 6; delay: 2000;"></a-plane>
+         <a-plane id="aleppocaption" position="0 3 0" rotation="0 0 0" height=".6" width="auto" color="#f4a742"
+          text="value: Aleppo; width: 6; align: center; color: black" 
+                  animation__swoop="property: position; dur: 5000; loop: false; to: 0 -2.6 6;"
+         ></a-plane>
+         
+       </a-entity>
+       
+       <a-entity id="aleppomodeldisplay" class="homeworld" position="5.958 0.047 6.664">
+         <a-box  color="orange" width="2" height="2" depth="2"></a-box>
+         <a-gltf-model position="0 2.3 0" rotation="0 -80 -10" src="#aleppo" scale="0.1 .1 .1"
+         animation="property: rotation;  dur: 50000; loop: true; to: 0 1290 0"
+         ></a-gltf-model>
+         <a-plane id="aleppomodelcaption" position="-2.32 1 -2.578" rotation="0 220 0" height=".6" width="2" color="#191817" 
+        text= "value: Aleppo; align: center"
+         ></a-plane>
+       </a-entity>
+       
+ </a-scene>
+    
+  </body>
+  
+</html>

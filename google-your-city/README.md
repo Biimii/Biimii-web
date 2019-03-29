@@ -1,5 +1,5 @@
 # What does Google Think of Your City?
-## Interesting Screenshot of my map
+## Interesting Screenshot of my visualization
 ![](images/interesting-snapshot-transport-disabled.GIF)
 ## Link to my map
 https://google-your-city.glitch.me/

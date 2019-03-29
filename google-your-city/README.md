@@ -1,10 +1,10 @@
 # What does Google Think of Your City?
 ## Interesting Screenshot of my visualization
-![](images/interesting-snapshot-transport-disabled.GIF)
+![](images/interesting-snapshot.GIF)
 ## Link to my map
 https://google-your-city.glitch.me/
 ## Reliance on other resources
-I based my map from an inspiration of this map, where I input my code based on this creator's map: https://labs.mapbox.com/bites/00082/site.js & https://labs.mapbox.com/bites/00082/ and also took some notes from mapbox "Analyze data with Turf.js and Mapbox GLJS :https://docs.mapbox.com/help/tutorials/analysis-with-turf/
+I used A-Frame to design my visualization and rely upon the skills I learned from the A-frame academy projects to help me create a VR map that was interesting and meaningful.
 ## Reflective Analysis
 
 I designed this map for the general vancouver and education community to allow the users to explore and analyse the mobility for the disabled community in Vancouver. Some of the questions that I attempt to raise are why some disabled parking are located where they are? How does it affect the crip mobility of Vancouver in terms of disabled parking and transit station?
